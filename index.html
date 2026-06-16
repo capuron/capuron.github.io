@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jane Yeung — Localization Director &amp; AI-Integrated Translation Strategist</title>
+  <meta name="description" content="Jane Yeung — Localization Director and Multilingual Operations Leader. Building scalable, AI-integrated localization for global tech and fintech." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f6f7f9;
+      --border: #e6e8eb;
+      --text: #1a1d21;
+      --text-soft: #5b636c;
+      --accent: #7c3aed;
+      --accent-soft: #f3eefe;
+      --radius: 14px;
+      --maxw: 900px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- Nav ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    nav .brand { font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
+    nav .navlinks { display: flex; gap: 22px; font-size: 14.5px; font-weight: 500; }
+    nav .navlinks a { color: var(--text-soft); }
+    nav .navlinks a:hover { color: var(--accent); text-decoration: none; }
+    @media (max-width: 600px) { nav .navlinks { display: none; } }
+
+    /* ---------- Hero ---------- */
+    header.hero { padding: 80px 0 52px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      display: inline-block; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.03em; color: var(--accent); background: var(--accent-soft);
+      padding: 6px 13px; border-radius: 999px; margin-bottom: 22px;
+    }
+    h1 { font-size: clamp(36px, 6vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; }
+    .subtitle { margin-top: 16px; font-size: clamp(17px, 2.4vw, 21px); color: var(--text-soft); max-width: 660px; }
+    .meta-row { margin-top: 18px; font-size: 15px; color: var(--text-soft); display: flex; flex-wrap: wrap; gap: 8px 18px; }
+    .meta-row span { display: inline-flex; align-items: center; gap: 6px; }
+    .links { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600;
+      padding: 10px 18px; border-radius: 10px; border: 1px solid var(--border);
+      color: var(--text); background: var(--bg); transition: all 0.15s ease;
+    }
+    .btn:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn.primary:hover { background: #6d28d9; color: #fff; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 54px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    .section-title { font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 28px; }
+    .about p { font-size: 18px; color: var(--text); max-width: 720px; }
+    .about p + p { margin-top: 16px; }
+
+    /* ---------- Experience ---------- */
+    .xp { display: grid; gap: 30px; }
+    .xp-item { display: grid; grid-template-columns: 1fr; gap: 6px; }
+    .xp-head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .xp-role { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+    .xp-org { font-size: 15px; font-weight: 600; color: var(--accent); }
+    .xp-loc { font-size: 14px; color: var(--text-soft); }
+    .xp ul { margin: 8px 0 0; padding-left: 20px; color: var(--text-soft); font-size: 15.5px; }
+    .xp ul li { margin-bottom: 5px; }
+
+    /* ---------- Project cards ---------- */
+    .lead-in { font-size: 17px; color: var(--text); max-width: 720px; margin-bottom: 26px; }
+    .projects { display: grid; gap: 18px; }
+    .card { border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all 0.18s ease; background: var(--bg); }
+    .card:hover { border-color: #cfd4da; box-shadow: 0 6px 24px rgba(20,30,50,0.06); transform: translateY(-2px); }
+    .card-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .card h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+    .card .role { font-size: 12.5px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+    .card p.desc { margin-top: 10px; color: var(--text-soft); font-size: 15.5px; }
+    .card ul { margin: 12px 0 0; padding-left: 20px; color: var(--text-soft); font-size: 15px; }
+    .card ul li { margin-bottom: 4px; }
+    .tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: 12.5px; font-weight: 500; color: var(--text-soft); background: var(--bg-soft); border: 1px solid var(--border); padding: 4px 10px; border-radius: 7px; }
+    .private-note { margin-top: 16px; font-size: 13px; color: var(--text-soft); font-style: italic; }
+
+    /* ---------- Skills + Languages ---------- */
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; gap: 32px; } }
+    .skill-group { margin-bottom: 20px; }
+    .skill-group h4 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+    .skill-group .tags { margin-top: 0; }
+    .lang-list { list-style: none; padding: 0; }
+    .lang-list li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+    .lang-list li:last-child { border-bottom: none; }
+    .lang-list .level { color: var(--text-soft); font-size: 13.5px; font-weight: 600; }
+
+    /* ---------- Education ---------- */
+    .edu-item { margin-bottom: 16px; }
+    .edu-item .deg { font-weight: 700; font-size: 16px; }
+    .edu-item .inst { color: var(--text-soft); font-size: 15px; }
+
+    /* ---------- Footer ---------- */
+    footer { padding: 44px 0 64px; color: var(--text-soft); font-size: 14px; }
+    footer .links { margin-top: 14px; }
+    footer a { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <span class="brand">Jane Yeung</span>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Localization Director · Chiang Mai, Thailand</span>
+      <h1>Jane Yeung</h1>
+      <p class="subtitle">
+        Multilingual Operations Leader &amp; AI-Integrated Translation Strategist —
+        building scalable, AI-driven localization for global tech and fintech.
+      </p>
+      <div class="links">
+        <a class="btn primary" href="https://linkedin.com/in/janeyeung" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="mailto:janeyeung1230@gmail.com">Email</a>
+        <a class="btn" href="https://github.com/capuron" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="#projects">View projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="about wrap">
+      <p class="section-title">About</p>
+      <p>
+        Global localization leader directing high-impact translation operations for global
+        tech and fintech firms including <strong>Crypto.com</strong>, <strong>Google</strong>,
+        and <strong>Apple</strong>. I build scalable localization infrastructure, integrate
+        AI-driven workflows, and align multilingual content with strategic growth goals.
+      </p>
+      <p>
+        I lead through cross-cultural collaboration, vendor management, and LQA optimization —
+        driving impact with inclusive, culturally-relevant, and tech-enhanced content. I also
+        build AI systems hands-on (see <a href="#projects">Projects</a>), which keeps my
+        AI-localization strategy grounded in how the technology actually works.
+      </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="wrap">
+      <p class="section-title">Experience</p>
+      <div class="xp">
+
+        <div class="xp-item">
+          <div class="xp-head">
+            <span class="xp-role">Senior Localization Manager</span>
+            <span class="xp-org">Crypto.com · Remote</span>
+          </div>
+          <ul>
+            <li>Built and led a high-performing localization team from the ground up — scaling from 0 to 20+ languages in under a year</li>
+            <li>Designed and implemented AI-powered localization workflows using agentic AI and RAG, improving productivity ~30% and cutting turnaround time ~50%</li>
+            <li>Directed cross-functional initiatives with product, marketing, legal, and engineering to embed localization into company-wide roadmaps</li>
+            <li>Managed internal staff and a network of 40+ linguists, designers, and vendors across platforms</li>
+          </ul>
+        </div>
+
+        <div class="xp-item">
+          <div class="xp-head">
+            <span class="xp-role">Localization Consultant / Freelancer</span>
+            <span class="xp-org">Google · Apple · eBay · Uber · Spotify</span>
+          </div>
+          <ul>
+            <li>Delivered end-to-end localization — LQA, asset maintenance, and quality audits across UI, marketing, and legal content</li>
+            <li>Facilitated client and vendor syncs to assess quality KPIs and continuously improve localization processes</li>
+            <li>Managed glossaries and translation memories, and resolved linguistic bugs across multilingual digital products</li>
+          </ul>
+        </div>
+
+        <div class="xp-item">
+          <div class="xp-head">
+            <span class="xp-role">Translator</span>
+            <span class="xp-org">Médiamétrie · Paris, France</span>
+          </div>
+          <ul>
+            <li>Translated media industry reports and documentation from French to Chinese and English</li>
+            <li>Maintained terminology alignment and consistency with corporate editorial standards</li>
+          </ul>
+        </div>
+
+        <div class="xp-item">
+          <div class="xp-head">
+            <span class="xp-role">Network Storage Administrator</span>
+            <span class="xp-org">Aozora Bank · Tokyo, Japan</span>
+          </div>
+          <ul>
+            <li>Supported and administered storage systems in a bilingual (Japanese–English) financial IT environment</li>
+            <li>Built cross-functional communication skills in a fast-paced setting</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="wrap">
+      <p class="section-title">Projects — Building with AI, hands-on</p>
+      <p class="lead-in">
+        My localization work increasingly runs on AI, so I build AI systems myself to
+        understand them deeply. A few I've designed and built end-to-end:
+      </p>
+      <div class="projects">
+
+        <!-- AI Video Pipeline -->
+        <article class="card">
+          <div class="card-head">
+            <h3>Autonomous AI Video Pipeline</h3>
+            <span class="role">Designed &amp; built</span>
+          </div>
+          <p class="desc">
+            A self-running content factory that generates short-form AI videos and publishes
+            them to YouTube on a schedule — with multilingual titles, descriptions, and hashtags.
+          </p>
+          <ul>
+            <li>Multi-stage pipeline: concept → keyframes → video → sound design → assembly → publish</li>
+            <li>Multilingual publishing (EN / ZH / JA / FR / ES) with translated metadata and SEO</li>
+            <li>A vision-based QA reviewer catches visual defects before any spend</li>
+            <li>Runs unattended on a server with a human approval gate over Telegram</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Agentic AI</span>
+            <span class="tag">LLM workflows</span>
+            <span class="tag">Multilingual SEO</span>
+            <span class="tag">Python</span>
+            <span class="tag">Automation</span>
+          </div>
+          <p class="private-note">Private repo · walkthrough available on request</p>
+        </article>
+
+        <!-- Hermes AI Agent -->
+        <article class="card">
+          <div class="card-head">
+            <h3>Hermes — Personal AI Agent</h3>
+            <span class="role">Designed &amp; built</span>
+          </div>
+          <p class="desc">
+            An autonomous AI assistant that operates over Telegram and can run real tools and
+            skills on a server — the same agentic-AI pattern I bring into localization workflows.
+          </p>
+          <ul>
+            <li>Extensible skills system; natural-language intent layered with deterministic commands</li>
+            <li>Drives the AI video pipeline and surfaces live status on demand</li>
+            <li>Runs as a hardened, always-on service</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Agentic AI</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Telegram Bot</span>
+            <span class="tag">Automation</span>
+          </div>
+          <p class="private-note">Private repo · demo available on request</p>
+        </article>
+
+        <!-- Mystica Mind -->
+        <article class="card">
+          <div class="card-head">
+            <h3>Mystica Mind</h3>
+            <span class="role">Designed &amp; built</span>
+          </div>
+          <p class="desc">
+            A tarot and horoscope web app with a polished, themeable interface and a smooth,
+            continuous deployment workflow.
+          </p>
+          <ul>
+            <li>Responsive single-page web app, deployed live on Netlify</li>
+            <li>Configurable free / paid mode for monetization</li>
+            <li>Branch-based deploy previews for fast iteration</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Web app</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Netlify</span>
+            <span class="tag">UX</span>
+          </div>
+          <p class="private-note">Private repo · live demo available on request</p>
+        </article>
+
+        <!-- Blitzz Chess -->
+        <article class="card">
+          <div class="card-head">
+            <h3>Blitzz Chess Rivals</h3>
+            <span class="role">Designed &amp; built</span>
+          </div>
+          <p class="desc">
+            A live multiplayer chess game on Roblox with a novel "airdrop" twist — capture a
+            piece in your match and drop it onto someone else's board.
+          </p>
+          <ul>
+            <li>Real-time PvP matchmaking with a global rating leaderboard</li>
+            <li>500-puzzle solo mode and a parkour "gauntlet" with a coin economy and speedruns</li>
+            <li>Full game design, balancing, and persistence</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Game design</span>
+            <span class="tag">Roblox / Lua</span>
+            <span class="tag">Multiplayer</span>
+            <span class="tag">Product</span>
+          </div>
+          <p class="private-note">Private repo · walkthrough available on request</p>
+        </article>
+
+        <!-- Trading Bot -->
+        <article class="card">
+          <div class="card-head">
+            <h3>Momentum Trading Bot</h3>
+            <span class="role">Designed &amp; built</span>
+          </div>
+          <p class="desc">
+            An automated momentum-strategy trading bot with its own live dashboard, running
+            continuously on a server.
+          </p>
+          <ul>
+            <li>Strategy execution decoupled from a real-time monitoring dashboard</li>
+            <li>Always-on, resource-coordinated with my other automation</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Automation</span>
+            <span class="tag">Python</span>
+            <span class="tag">Dashboards</span>
+          </div>
+          <p class="private-note">Private repo · details available on request</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SKILLS + LANGUAGES -->
+    <section id="skills" class="wrap">
+      <div class="grid2">
+        <div>
+          <p class="section-title">Skills</p>
+          <div class="skill-group">
+            <h4>Localization &amp; Operations</h4>
+            <div class="tags">
+              <span class="tag">Localization Strategy</span>
+              <span class="tag">LQA</span>
+              <span class="tag">Globalization Roadmaps</span>
+              <span class="tag">Linguistic Asset Management</span>
+              <span class="tag">Vendor Relations</span>
+              <span class="tag">Team Management</span>
+              <span class="tag">Budget Planning</span>
+              <span class="tag">Cross-Functional Collaboration</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>AI &amp; Tools</h4>
+            <div class="tags">
+              <span class="tag">AI-Enhanced Workflows</span>
+              <span class="tag">Agentic AI</span>
+              <span class="tag">RAG</span>
+              <span class="tag">TMS (Lokalise, Memsource)</span>
+              <span class="tag">CAT Tools</span>
+              <span class="tag">Figma</span>
+              <span class="tag">GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="section-title">Languages</p>
+          <ul class="lang-list">
+            <li><span>Cantonese (ZH-HK)</span><span class="level">Native</span></li>
+            <li><span>Mandarin (ZH-CN)</span><span class="level">Native</span></li>
+            <li><span>English</span><span class="level">Fluent</span></li>
+            <li><span>French</span><span class="level">Fluent</span></li>
+            <li><span>Japanese</span><span class="level">Fluent</span></li>
+            <li><span>Thai · Korean · Italian · German</span><span class="level">Conversational</span></li>
+          </ul>
+
+          <p class="section-title" style="margin-top:36px;">Education</p>
+          <div class="edu-item">
+            <div class="deg">MA, Technical Communication &amp; Localization</div>
+            <div class="inst">University of Strasbourg, France</div>
+          </div>
+          <div class="edu-item">
+            <div class="deg">BA, Languages with Business</div>
+            <div class="inst">Hong Kong Polytechnic University</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <p class="section-title" style="margin-bottom:14px;">Get in touch</p>
+      <p>Open to localization leadership and AI-localization strategy conversations.</p>
+      <div class="links">
+        <a href="mailto:janeyeung1230@gmail.com">janeyeung1230@gmail.com</a>
+        <a href="https://linkedin.com/in/janeyeung" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/capuron" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
